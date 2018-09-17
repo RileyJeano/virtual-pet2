@@ -23,3 +23,6 @@ Public opinion
 Show off normal cat
 -will raise public opinion
 -will make cat bored
+
+Orgalorg
+-Orgalorg has prioritized his own stats and will ovveride the player decision if any of his stats get too low!

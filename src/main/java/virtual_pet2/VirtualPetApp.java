@@ -9,6 +9,7 @@ public class VirtualPetApp {
 
 		System.out.println("It looks like your new pet is here!");
 		// pet image
+		vp.art(1);
 		System.out.println(
 				"Aww what an adorable cat! \n...\nThat doesn't look like a normal cat...\nOrgalorg the Vampire Cat Appears! \nWhat a challenge you have! \nYou'll have to take care of Orgalorg while hiding from the public! \nWho knows what will happen if they learn about Orgalorg! ");
 		Boolean test = true;
@@ -26,18 +27,20 @@ public class VirtualPetApp {
 
 			if (vp.playertOverrideCat()) {
 				vp.userInput(playerChoice);
+			} else {
+				int newPlayerInput = vp.catOveride();
+				vp.userInput(newPlayerInput);
 			}
-			// else {
-			// vp.catOveride();
-			// }
 			vp.tick();
+			if (vp.publicOpinionLevel < 20)
 
+			{
+				vp.art(6);
+				System.out.println("You were found out!");
+				test = false;
+
+			}
 		}
-		if (vp.publicOpinionLevel < 20)
 
-		{
-			System.out.println("You were found out!");
-
-		}
 	}
 }

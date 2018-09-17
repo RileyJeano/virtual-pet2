@@ -23,9 +23,16 @@ public class VirtualPet {
 	public String[] clockTime = { "12:00 am", "1:00 am", "2:00 am", "3:00 am", "4:00 am", "5:00 am", "6:00 am",
 			"7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm",
 			"4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm", "8:00 pm", "9:00 pm", "10:00 pm", "11:00 pm" };
+	public String[] possibleResponces = { "Oh no! The public saw Orgalorg feed!!!",
+			"Ah Orgalorg has feasted on the blood of the mortals",
+			"What an enjoyable game of plotting your neighbor's death",
+			"You may call it a cat nap but Orgalorg is only plotting with his eyes closed!",
+			"Orgalorg does not enjoy being shown off in this manner! Bow to Orgalorg" };
 
 	// day feeding
 	public int feedPetDay() {
+		art(5);
+		System.out.println(possibleResponces[0]);
 		if (hungerLevel < 100) {
 			hungerLevel = hungerLevel + feedDay;
 		} else {
@@ -37,6 +44,8 @@ public class VirtualPet {
 
 	// night feeding
 	public int feedPetNight() {
+		art(1);
+		System.out.println(possibleResponces[1]);
 		if (hungerLevel < 100) {
 			hungerLevel = hungerLevel + feedNight;
 		} else {
@@ -47,6 +56,8 @@ public class VirtualPet {
 
 	// play with
 	public int playWithPet() {
+		art(3);
+		System.out.println(possibleResponces[2]);
 		if (boredomLevel < 100) {
 			boredomLevel = boredomLevel + playCat;
 		} else {
@@ -58,6 +69,8 @@ public class VirtualPet {
 
 	// sleep
 	public int putPetToSleep() {
+		art(2);
+		System.out.println(possibleResponces[3]);
 		if (sleepynessLevel < 100) {
 			sleepynessLevel = sleepynessLevel + playCat;
 		} else {
@@ -76,7 +89,7 @@ public class VirtualPet {
 	// tick
 	public int tick() {
 		clock = clock + clockIncrease;
-		if (clock == 2500) {
+		if (clock > 2300) {
 			clock = 0;
 		}
 		hungerLevel = hungerLevel - tick;
@@ -96,6 +109,8 @@ public class VirtualPet {
 
 	// show off cat
 	public int showOffCat() {
+		art(4);
+		System.out.println(possibleResponces[4]);
 		if (publicOpinionLevel < 100) {
 			publicOpinionLevel = publicOpinionLevel + opinionChange;
 		} else {
@@ -106,9 +121,8 @@ public class VirtualPet {
 	}
 
 	// do nothing
-	public int doNothing() {
-		clock = clock + clockIncrease;
-		return clock;
+	public void doNothing() {
+		art(1);
 	}
 
 	// change number to string description
@@ -198,11 +212,16 @@ public class VirtualPet {
 
 	// if the cat does influence player choice
 	public int catOveride() {
+		System.out.println("");
+		System.out.println("Orgalorg cannot be constrained by a meer mortal!");
 		if (hungerLevel < 20) {
+			System.out.println("Orgalorg must feed!");
 			return 1;
 		} else if (sleepynessLevel < 20) {
+			System.out.println("Orgalorg must slumber!");
 			return 3;
 		} else if (boredomLevel < 20) {
+			System.out.println("Orgalorg must play!");
 			return 2;
 		} else {
 			return 2;
@@ -303,6 +322,60 @@ public class VirtualPet {
 			return clockTime[23];
 		} else {
 			return null;
+		}
+	}
+
+	public void art(int selection) {
+		if (selection == 1) {
+			System.out.println("  _._     _,-''''''-.");
+			System.out.println(" (,-.`._,'(       |\\`-/| ");
+			System.out.println("    `-.-' \\ )-`( , o o)");
+			System.out.println("          `-    \\`_`''-");
+		}
+		if (selection == 2) {
+			System.out.println("      |\\      _,,,---,,_");
+			System.out.println("ZZZzz /,`.-'`'    -.    ;-;;,_");
+			System.out.println("     |,4-  ) )-,_. ,\\ (  `'-'");
+			System.out.println("    '---''(_/--'  `-'\\_)  ");
+		}
+		if (selection == 3) {
+			System.out.println("    |\\__/,|   (`\\");
+			System.out.println("  _.|o o  |_   ) )");
+			System.out.println(" -(((---(((--------");
+
+		}
+		if (selection == 4) {
+			System.out.println(" |\\'/-..--.");
+			System.out.println(" / _ _   ,  ;");
+			System.out.println("`~=`Y'~_<._./");
+			System.out.println("<`-....__.'");
+		}
+
+		if (selection == 5) {
+			System.out.println("       >\\\\\\|/<");
+			System.out.println("       |_\"\"\"_|");
+			System.out.println("        (O) (o)");
+			System.out.println("+----OOO--(_)--OOOo----");
+			System.out.println("");
+
+		}
+		if (selection == 6) {
+			System.out.println("	          ///\"\\");
+			System.out.println("	          |6 6|");
+			System.out.println("	          \\ - /");
+			System.out.println("	   .@@@. __) (__");
+			System.out.println("	   @6 6@/  \\./  \\");
+			System.out.println("	   @ = @ :  :  : \\");
+			System.out.println("	   _) (_'|  :  |) )");
+			System.out.println("	 /' \\./ '\\  :  |_/");
+			System.out.println("        / /\\ _ /\\ \\=o==|)");
+			System.out.println("        \\ \\)  (/ /%|%%'");
+			System.out.println("	'7/    \\7%%|%%'");
+			System.out.println("	  |    |`%%|%%'");
+			System.out.println("	  |    |`%%|%%'");
+			System.out.println("	  |    |`%%|%%'");
+			System.out.println("	  |_.._| /_|_\\");
+
 		}
 	}
 	// is it night

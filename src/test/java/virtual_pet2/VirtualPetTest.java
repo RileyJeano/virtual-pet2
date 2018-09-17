@@ -142,13 +142,6 @@ public class VirtualPetTest {
 
 	}
 
-	// Player do nothing
-	@Test
-	public void playerDoNothing() {
-		VirtualPet underTest = new VirtualPet();
-		int doNothing = underTest.doNothing();
-		Assert.assertEquals("Should be false", 100, doNothing);
-	}
 	// feed either other cat or dog
 
 }
